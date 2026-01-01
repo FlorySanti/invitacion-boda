@@ -3,92 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Florencia & Santiago - 30.01.26</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Florencia & Santiago</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --verde-oliva: #6E7B53;
-      --verde-claro: #A3B18A;
-      --crema: #F6F2ED;
-      --texto: #4A4A4A;
+      /* Nueva paleta de colores basada en la invitación */
+      --verde-oscuro-texto: #414F3E; /* Color del texto de la invitación */
+      --verde-salvia-fondo: #E3E9E1; /* Color del fondo del arco */
+      --verde-claro-borde: #A3B18A;
+      --fondo-externo: #F2F5F1;
     }
 
     body {
-      background-color: #d1d1d1;
-      font-family: 'Montserrat', sans-serif;
+      background-color: var(--fondo-externo);
+      /* Usamos Lora para los textos generales (serif, como en la invitación) */
+      font-family: 'Lora', serif;
       margin: 0;
       display: flex;
       justify-content: center;
-      color: var(--texto);
+      color: var(--verde-oscuro-texto);
+      line-height: 1.6;
     }
 
     .contenedor-principal {
       max-width: 450px;
       width: 100%;
-      background: var(--crema);
-      /* EFECTO ARCO DE LA REFERENCIA */
+      background: var(--verde-salvia-fondo);
+      /* Mantenemos el arco de la referencia */
       border-radius: 220px 220px 0 0; 
-      margin-top: 20px;
-      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      box-shadow: 0px 15px 35px rgba(65, 79, 62, 0.15);
       overflow: hidden;
       position: relative;
     }
 
     section { padding: 40px 30px; text-align: center; }
 
-    .header { padding-top: 100px; background-color: #E9E5DE; }
+    .header { 
+      padding-top: 100px; 
+      /* Un degradado sutil para dar profundidad al arco */
+      background: linear-gradient(to bottom, var(--verde-salvia-fondo), #EEF2EC);
+    }
     
-    h1 { 
-      font-family: 'Pinyon Script', cursive; 
-      font-size: 3.5rem; 
-      color: var(--verde-oliva);
-      margin: 0;
+    .subtitulo {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 10px;
     }
 
-    .subtitulo { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-top: 10px; }
+    h1 { 
+      /* Fuente cursiva similar a la invitación */
+      font-family: 'Pinyon Script', cursive; 
+      font-size: 4rem; 
+      line-height: 1.2;
+      color: var(--verde-oscuro-texto);
+      margin: 20px 0;
+      font-weight: 400;
+    }
+
+    /* Estilo para la fecha tipo "bloque" de la invitación */
+    .fecha-bloque {
+      border-top: 1px solid var(--verde-oscuro-texto);
+      border-bottom: 1px solid var(--verde-oscuro-texto);
+      padding: 15px 0;
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 300px;
+    }
+    .fecha-bloque div { padding: 0 15px; }
+    .fecha-dia { font-size: 2.5rem; font-weight: 400; line-height: 1; }
+    .fecha-mes-hora { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+    .barra-vertical { border-left: 1px solid var(--verde-oscuro-texto); height: 40px; }
+
+    .lugar-header { font-size: 1.2rem; }
 
     .foto-separador img {
       width: 100%;
-      height: 300px;
+      height: 350px;
       object-fit: cover;
       display: block;
+      /* Filtro sepia sutil para integrar la foto */
+      filter: sepia(20%);
     }
+
+    /* Bloques de secciones con un tono apenas más oscuro */
+    .bloque-destacado { 
+      background-color: #DCE3DA;
+      color: var(--verde-oscuro-texto);
+    }
+    .bloque-destacado h2 { 
+      font-family: 'Pinyon Script', cursive; 
+      font-size: 2.8rem; 
+      margin-bottom: 20px;
+    }
+
+    h2 { font-family: 'Lora', serif;text-transform: uppercase; letter-spacing: 2px; font-size: 1.3rem; color: var(--verde-oscuro-texto); }
 
     .itinerario-lista {
       text-align: left;
-      border-left: 2px solid var(--verde-claro);
+      border-left: 2px solid var(--verde-claro-borde);
       margin: 20px auto;
-      padding-left: 20px;
+      padding-left: 25px;
       display: inline-block;
     }
 
-    .item-itinerario { margin-bottom: 20px; position: relative; }
+    .item-itinerario { margin-bottom: 25px; position: relative; }
     .item-itinerario::before {
-      content: '●';
+      content: '✦'; /* Icono más elegante */
       position: absolute;
-      left: -27px;
-      color: var(--verde-oliva);
-      background: var(--crema);
+      left: -34px;
+      top: 2px;
+      color: var(--verde-oscuro-texto);
+      background: var(--verde-salvia-fondo);
+      padding: 0 5px;
+      font-size: 0.8rem;
     }
-
-    .bloque-verde { background: var(--verde-oliva); color: white; }
-    .bloque-verde h2 { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: white; }
 
     .boton {
       display: inline-block;
-      padding: 12px 25px;
-      border: 1px solid var(--verde-oliva);
-      color: var(--verde-oliva);
+      padding: 15px 30px;
+      background-color: var(--verde-oscuro-texto);
+      color: var(--verde-salvia-fondo);
       text-decoration: none;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      border-radius: 2px; /* Botones más cuadrados, más elegantes */
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       transition: 0.3s;
+      margin-top: 20px;
     }
+    .boton:hover { background-color: #2c362a; }
 
-    .boton-blanco { border-color: white; color: white; margin-top: 15px; }
+    #contador { font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-top: 20px;}
 
-    #contador { font-weight: 600; font-size: 1.2rem; color: var(--verde-oliva); }
+    footer { padding: 30px; text-align: center; font-size: 0.8rem; opacity: 0.7; letter-spacing: 2px;}
 
   </style>
 </head>
@@ -98,72 +148,82 @@
     
     <section class="header">
       <p class="subtitulo">Te invitamos a nuestro casamiento</p>
-      <h1>Florencia & Santiago</h1>
-      <div style="margin-top: 30px;">
-        <p>VIERNES</p>
-        <hr style="width: 50px; border: 0.5px solid var(--verde-oliva)">
-        <p style="font-size: 1.5rem; font-weight: 600;">ENERO | 30 | 21:00 HS</p>
-        <p>2026</p>
+      <h1>Florencia<br>&<br>Santiago</h1>
+      
+      <div style="text-transform: uppercase; letter-spacing: 3px; margin-top: 30px;">Viernes</div>
+      <div class="fecha-bloque">
+        <div class="fecha-mes-hora">Enero</div>
+        <div class="barra-vertical"></div>
+        <div class="fecha-dia">30</div>
+        <div class="barra-vertical"></div>
+        <div class="fecha-mes-hora">21:00 Hs</div>
       </div>
+      <div style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">2026</div>
+
+      <div class="lugar-header">
+        <p>Colegio Médico<br>Río Cuarto, Córdoba</p>
+      </div>
+      <a class="boton" href="https://goo.gl/maps/TU_LINK_REAL_AQUI" target="_blank">Ver Ubicación</a>
     </section>
 
     <div class="foto-separador">
-      <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600" alt="Nosotros">
+      <img src="https://images.unsplash.com/photo-1583934927936-259399367307?q=80&w=1974&auto=format&fit=crop" alt="Flor y Santi">
     </div>
 
-    <section>
-      <h2>Celebración</h2>
-      <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
-      <a class="boton" href="https://maps.google.com/?q=Colegio+Medico+Rio+Cuarto" target="_blank">VER UBICACIÓN</a>
-    </section>
-
-    <section class="bloque-verde">
+    <section class="bloque-destacado">
       <h2>Itinerario</h2>
       <div class="itinerario-lista">
-        <div class="item-itinerario"><strong>21:00 HS</strong> - Recepción</div>
-        <div class="item-itinerario"><strong>22:30 HS</strong> - Cena de gala</div>
-        <div class="item-itinerario"><strong>00:00 HS</strong> - Inicio de fiesta</div>
-        <div class="item-itinerario"><strong>05:00 HS</strong> - Fin del evento</div>
+        <div class="item-itinerario"><strong>21:00 HS</strong> <br> Recepción en el salón</div>
+        <div class="item-itinerario"><strong>22:30 HS</strong> <br> Cena y brindis</div>
+        <div class="item-itinerario"><strong>00:00 HS</strong> <br> ¡Comienza la fiesta!</div>
       </div>
     </section>
 
     <section>
       <h2>Confirmación</h2>
-      <p>Agradecemos confirmar antes del 10 de enero.</p>
-      <a class="boton" href="https://forms.google.com" target="_blank">CONFIRMAR ASISTENCIA</a>
+      <p>Es muy importante para nosotros que confirmes tu asistencia antes del 10 de Enero.</p>
+      <a class="boton" href="https://forms.google.com/TU_LINK_REAL" target="_blank">Confirmar Asistencia</a>
     </section>
 
-    <section class="bloque-verde">
+    <section class="bloque-destacado">
       <h2>Regalo</h2>
-      <p>Nuestro mejor regalo es tu presencia, pero si deseas colaborar con nuestra luna de miel:</p>
-      <p style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;">
-        Alias: flor.santi.boda<br>
-        CBU: 000000310001234567890
-      </p>
+      <p>El mejor regalo es que compartas este día con nosotros. Si deseas tener otro detalle, puedes hacerlo aquí:</p>
+      <div style="border: 1px solid var(--verde-oscuro-texto); padding: 20px; margin-top: 20px; display: inline-block;">
+        <p style="margin: 5px 0;"><strong>Alias:</strong> flor.santi.boda</p>
+        <p style="margin: 5px 0;"><strong>CBU:</strong> 000000310001234567890</p>
+      </div>
     </section>
 
     <section>
-      <h2>Faltan</h2>
+      <h2>Falta muy poco</h2>
       <div id="contador">Cargando...</div>
     </section>
 
-    <footer style="padding: 20px; text-align: center; font-size: 0.7rem; opacity: 0.6;">
-      FLORENCIA & SANTIAGO @ 2026
+    <footer>
+      F & S · 2026
     </footer>
 
   </div>
 
   <script>
+    // Configuración del contador para Argentina (UTC-3)
     function updateCountdown() {
-      const boda = new Date('January 30, 2026 21:00:00').getTime();
-      const ahora = new Date().getTime();
-      const diff = boda - ahora;
+        // Fecha objetivo en UTC
+        const targetDate = new Date(Date.UTC(2026, 0, 31, 0, 0, 0)); // 31 Enero 00:00 UTC = 30 Enero 21:00 ARG
+        
+        const now = new Date().getTime();
+        const diff = targetDate - now;
 
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        if (diff <= 0) {
+            document.getElementById('contador').innerHTML = "¡ES HOY!";
+            return;
+        }
 
-      document.getElementById('contador').innerHTML = `${d}D : ${h}H : ${m}M`;
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById('contador').innerHTML = `${d} DÍAS | ${h} HS | ${m} MIN`;
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
