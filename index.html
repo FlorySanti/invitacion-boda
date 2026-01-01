@@ -54,7 +54,7 @@
       font-weight: 400;
     }
 
-    /* CENTRADO SIMÉTRICO DEL DÍA 30 */
+    /* REDISEÑO DE BLOQUE DE FECHA CON AÑO */
     .fecha-bloque {
       border-top: 1px solid var(--verde-oscuro-texto);
       border-bottom: 1px solid var(--verde-oscuro-texto);
@@ -69,18 +69,26 @@
     .fecha-mes-hora {
       flex: 1; 
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       letter-spacing: 2px;
     }
 
-    .fecha-mes-hora.izq { text-align: right; }
-    .fecha-mes-hora.der { text-align: left; }
+    /* Ajuste de espaciado lateral para evitar que se pegue a las barras */
+    .fecha-mes-hora.izq { 
+      text-align: right; 
+      padding-right: 20px; 
+    }
+
+    .fecha-mes-hora.der { 
+      text-align: left; 
+      padding-left: 20px; 
+    }
 
     .fecha-dia {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 400;
       line-height: 1;
-      padding: 0 15px;
+      padding: 0 10px;
       min-width: 65px;
       text-align: center;
     }
@@ -107,13 +115,9 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 20px;
-      transition: opacity 0.3s;
     }
-    .boton:hover { opacity: 0.8; }
 
-    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; letter-spacing: 1px; }
-
-    footer { padding: 20px; font-size: 0.8rem; opacity: 0.6; }
+    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; }
   </style>
 </head>
 <body>
@@ -125,14 +129,14 @@
       <h1>Florencia<br>&<br>Santiago</h1>
       
       <div style="text-transform: uppercase; letter-spacing: 3px; margin-top: 30px;">Viernes</div>
+      
       <div class="fecha-bloque">
         <div class="fecha-mes-hora izq">Enero</div>
         <div class="barra-vertical"></div>
         <div class="fecha-dia">30</div>
         <div class="barra-vertical"></div>
-        <div class="fecha-mes-hora der">21:00<br>HS</div>
+        <div class="fecha-mes-hora der">2026</div>
       </div>
-      <div style="text-transform: uppercase; letter-spacing: 3px;">2026</div>
 
       <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
       <a class="boton" href="https://maps.app.goo.gl/qMRn4nFuyh6tFv4F7" target="_blank">Ver Ubicación</a>
@@ -171,8 +175,6 @@
       <div id="contador"></div>
     </section>
 
-    <footer>F & S · 2026</footer>
-
   </div>
 
   <script>
@@ -180,16 +182,9 @@
         const target = new Date('January 30, 2026 21:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-
-        if (diff <= 0) {
-            document.getElementById('contador').innerHTML = "¡LLEGÓ EL DÍA!";
-            return;
-        }
-
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
         document.getElementById('contador').innerHTML = `${d} DÍAS | ${h} HS | ${m} MIN`;
     }
     setInterval(updateCountdown, 1000);
