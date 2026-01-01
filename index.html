@@ -6,7 +6,7 @@
   
   <meta property="og:title" content="Invitación: Florencia & Santiago">
   <meta property="og:description" content="¡Nos casamos! Confirmá tu asistencia aquí para el 30/01/2026.">
-  <meta property="og:image" content="https://i.imgur.com/REEMPLAZAR_CON_TU_FOTO.jpg">
+  <meta property="og:image" content="_DSC3931.jpg">
   <meta property="og:url" content="https://santihern15.github.io/invitacion-boda/">
   <meta property="og:type" content="website">
 
@@ -40,24 +40,21 @@
       margin-top: 30px;
       box-shadow: 0px 15px 35px rgba(65, 79, 62, 0.15);
       overflow: hidden;
-      position: relative;
     }
 
     section { padding: 40px 30px; text-align: center; }
 
     .header { padding-top: 100px; background: linear-gradient(to bottom, var(--verde-salvia-fondo), #EEF2EC); }
     
-    .subtitulo { font-size: 1.1rem; font-style: italic; margin-bottom: 10px; }
-
     h1 { 
       font-family: 'Pinyon Script', cursive; 
       font-size: 4rem; 
       line-height: 1.2;
-      color: var(--verde-oscuro-texto);
       margin: 20px 0;
       font-weight: 400;
     }
 
+    /* CORRECCIÓN DE CENTRADO DEL "30" */
     .fecha-bloque {
       border-top: 1px solid var(--verde-oscuro-texto);
       border-bottom: 1px solid var(--verde-oscuro-texto);
@@ -66,16 +63,33 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 300px;
+      max-width: 350px;
     }
-    .fecha-bloque div { padding: 0 15px; }
-    .fecha-dia { font-size: 2.5rem; font-weight: 400; line-height: 1; }
-    .fecha-mes-hora { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+
+    .fecha-mes-hora {
+      flex: 1; 
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .fecha-mes-hora.izq { text-align: right; }
+    .fecha-mes-hora.der { text-align: left; }
+
+    .fecha-dia {
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1;
+      padding: 0 15px;
+      min-width: 60px;
+      text-align: center;
+    }
+
     .barra-vertical { border-left: 1px solid var(--verde-oscuro-texto); height: 40px; }
 
     .foto-separador img {
       width: 100%;
-      height: 350px;
+      height: 400px;
       object-fit: cover;
       display: block;
     }
@@ -83,44 +97,19 @@
     .bloque-destacado { background-color: #DCE3DA; }
     .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 20px; }
 
-    h2 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.3rem; }
-
-    .itinerario-lista {
-      text-align: left;
-      border-left: 2px solid var(--verde-claro-borde);
-      margin: 20px auto;
-      padding-left: 25px;
-      display: inline-block;
-    }
-
-    .item-itinerario { margin-bottom: 25px; position: relative; }
-    .item-itinerario::before {
-      content: '✦'; 
-      position: absolute;
-      left: -34px;
-      top: 2px;
-      color: var(--verde-oscuro-texto);
-      background: var(--verde-salvia-fondo);
-      padding: 0 5px;
-    }
-
     .boton {
       display: inline-block;
       padding: 15px 30px;
       background-color: var(--verde-oscuro-texto);
       color: white;
       text-decoration: none;
-      border-radius: 2px; 
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 20px;
     }
 
-    #contador { font-size: 1.2rem; font-weight: 600; letter-spacing: 2px; margin-top: 15px; }
-
-    footer { padding: 30px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
-
+    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; }
   </style>
 </head>
 <body>
@@ -128,60 +117,55 @@
   <div class="contenedor-principal">
     
     <section class="header">
-      <p class="subtitulo">Te invitamos a nuestro casamiento</p>
+      <p style="font-style: italic;">Te invitamos a nuestro casamiento</p>
       <h1>Florencia<br>&<br>Santiago</h1>
       
       <div style="text-transform: uppercase; letter-spacing: 3px; margin-top: 30px;">Viernes</div>
       <div class="fecha-bloque">
-        <div class="fecha-mes-hora">Enero</div>
+        <div class="fecha-mes-hora izq">Enero</div>
         <div class="barra-vertical"></div>
         <div class="fecha-dia">30</div>
         <div class="barra-vertical"></div>
-        <div class="fecha-mes-hora">21:00 Hs</div>
+        <div class="fecha-mes-hora der">21:00<br>HS</div>
       </div>
-      <div style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">2026</div>
+      <div style="text-transform: uppercase; letter-spacing: 3px;">2026</div>
 
       <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
       <a class="boton" href="https://maps.app.goo.gl/qMRn4nFuyh6tFv4F7" target="_blank">Ver Ubicación</a>
     </section>
 
     <div class="foto-separador">
-      <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600" alt="Flor y Santi">
+      <img src="_DSC3931.jpg" alt="Florencia y Santiago">
     </div>
 
     <section class="bloque-destacado">
       <h2>Itinerario</h2>
-      <div class="itinerario-lista">
-        <div class="item-itinerario"><strong>21:00 HS</strong> <br> Recepción</div>
-        <div class="item-itinerario"><strong>22:30 HS</strong> <br> Cena y Brindis</div>
-        <div class="item-itinerario"><strong>00:00 HS</strong> <br> ¡Fiesta!</div>
+      <div style="text-align: left; display: inline-block; border-left: 2px solid var(--verde-claro-borde); padding-left: 20px;">
+        <p><strong>21:00 HS</strong> - Recepción</p>
+        <p><strong>22:30 HS</strong> - Cena y Brindis</p>
+        <p><strong>00:00 HS</strong> - Fiesta</p>
       </div>
     </section>
 
     <section>
       <h2>Confirmación</h2>
-      <p style="font-style: italic; font-size: 0.9rem; margin-bottom: 20px;">IMPORTANTE: Completar un formulario por invitado.</p>
-      <p>Por favor, confirmanos tu asistencia antes del 15 de enero.</p>
+      <p style="font-style: italic; font-size: 0.9rem;">IMPORTANTE: Completar un formulario por invitado.</p>
       <a class="boton" href="https://forms.gle/DyGJSEcH8xj3xS9L6" target="_blank">Confirmar Asistencia</a>
     </section>
 
     <section class="bloque-destacado">
       <h2>Regalo</h2>
-      <p>Tu presencia es nuestro mejor regalo. Si deseás realizarnos un presente:</p>
-      <div style="border: 1px solid var(--verde-oscuro-texto); padding: 15px; margin-top: 20px; display: inline-block; font-size: 0.9rem;">
-        <p style="margin: 5px 0;"><strong>Alias:</strong> TU.ALIAS.AQUI</p>
-        <p style="margin: 5px 0;"><strong>CBU:</strong> 00000031000XXXXXXXXXX</p>
+      <p>Tu presencia es nuestro mejor regalo.</p>
+      <div style="border: 1px solid var(--verde-oscuro-texto); padding: 15px; display: inline-block;">
+        <p>Alias: <strong>TU.ALIAS.AQUI</strong></p>
+        <p>CBU: <strong>00000031000XXXXXXXXXX</strong></p>
       </div>
     </section>
 
     <section>
       <h2>Faltan</h2>
-      <div id="contador">Cargando...</div>
+      <div id="contador"></div>
     </section>
-
-    <footer>
-      F & S · 2026
-    </footer>
 
   </div>
 
@@ -190,16 +174,9 @@
         const target = new Date('January 30, 2026 21:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-
-        if (diff <= 0) {
-            document.getElementById('contador').innerHTML = "¡LLEGÓ EL DÍA!";
-            return;
-        }
-
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
         document.getElementById('contador').innerHTML = `${d} DÍAS | ${h} HS | ${m} MIN`;
     }
     setInterval(updateCountdown, 1000);
