@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florencia & Santiago - 30.01.26</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-oliva: #6E7B53;
+      --verde-claro: #A3B18A;
+      --crema: #F6F2ED;
+      --texto: #4A4A4A;
+    }
+
+    body {
+      background-color: #d1d1d1;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      color: var(--texto);
+    }
+
+    .contenedor-principal {
+      max-width: 450px;
+      width: 100%;
+      background: var(--crema);
+      /* EFECTO ARCO DE LA REFERENCIA */
+      border-radius: 220px 220px 0 0; 
+      margin-top: 20px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    section { padding: 40px 30px; text-align: center; }
+
+    .header { padding-top: 100px; background-color: #E9E5DE; }
+    
+    h1 { 
+      font-family: 'Pinyon Script', cursive; 
+      font-size: 3.5rem; 
+      color: var(--verde-oliva);
+      margin: 0;
+    }
+
+    .subtitulo { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-top: 10px; }
+
+    .foto-separador img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .itinerario-lista {
+      text-align: left;
+      border-left: 2px solid var(--verde-claro);
+      margin: 20px auto;
+      padding-left: 20px;
+      display: inline-block;
+    }
+
+    .item-itinerario { margin-bottom: 20px; position: relative; }
+    .item-itinerario::before {
+      content: '●';
+      position: absolute;
+      left: -27px;
+      color: var(--verde-oliva);
+      background: var(--crema);
+    }
+
+    .bloque-verde { background: var(--verde-oliva); color: white; }
+    .bloque-verde h2 { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: white; }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 1px solid var(--verde-oliva);
+      color: var(--verde-oliva);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .boton-blanco { border-color: white; color: white; margin-top: 15px; }
+
+    #contador { font-weight: 600; font-size: 1.2rem; color: var(--verde-oliva); }
+
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    
+    <section class="header">
+      <p class="subtitulo">Te invitamos a nuestro casamiento</p>
+      <h1>Florencia & Santiago</h1>
+      <div style="margin-top: 30px;">
+        <p>VIERNES</p>
+        <hr style="width: 50px; border: 0.5px solid var(--verde-oliva)">
+        <p style="font-size: 1.5rem; font-weight: 600;">ENERO | 30 | 21:00 HS</p>
+        <p>2026</p>
+      </div>
+    </section>
+
+    <div class="foto-separador">
+      <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600" alt="Nosotros">
+    </div>
+
+    <section>
+      <h2>Celebración</h2>
+      <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
+      <a class="boton" href="https://maps.google.com/?q=Colegio+Medico+Rio+Cuarto" target="_blank">VER UBICACIÓN</a>
+    </section>
+
+    <section class="bloque-verde">
+      <h2>Itinerario</h2>
+      <div class="itinerario-lista">
+        <div class="item-itinerario"><strong>21:00 HS</strong> - Recepción</div>
+        <div class="item-itinerario"><strong>22:30 HS</strong> - Cena de gala</div>
+        <div class="item-itinerario"><strong>00:00 HS</strong> - Inicio de fiesta</div>
+        <div class="item-itinerario"><strong>05:00 HS</strong> - Fin del evento</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Confirmación</h2>
+      <p>Agradecemos confirmar antes del 10 de enero.</p>
+      <a class="boton" href="https://forms.google.com" target="_blank">CONFIRMAR ASISTENCIA</a>
+    </section>
+
+    <section class="bloque-verde">
+      <h2>Regalo</h2>
+      <p>Nuestro mejor regalo es tu presencia, pero si deseas colaborar con nuestra luna de miel:</p>
+      <p style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;">
+        Alias: flor.santi.boda<br>
+        CBU: 000000310001234567890
+      </p>
+    </section>
+
+    <section>
+      <h2>Faltan</h2>
+      <div id="contador">Cargando...</div>
+    </section>
+
+    <footer style="padding: 20px; text-align: center; font-size: 0.7rem; opacity: 0.6;">
+      FLORENCIA & SANTIAGO @ 2026
+    </footer>
+
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const boda = new Date('January 30, 2026 21:00:00').getTime();
+      const ahora = new Date().getTime();
+      const diff = boda - ahora;
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById('contador').innerHTML = `${d}D : ${h}H : ${m}M`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
