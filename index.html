@@ -86,6 +86,9 @@
 
     .barra-vertical { border-left: 1px solid var(--verde-oscuro-texto); height: 40px; }
 
+    .bloque-ubicacion { margin-bottom: 40px; }
+    .bloque-ubicacion h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
+
     .foto-separador img {
       width: 100%;
       height: 400px;
@@ -105,7 +108,6 @@
       padding-bottom: 35px;
     }
     .timeline-item:last-child { padding-bottom: 0; }
-    
     .timeline-icon-col {
       width: 60px;
       display: flex;
@@ -114,14 +116,12 @@
       padding-right: 10px;
       padding-top: 5px;
     }
-    
     .png-icon {
       width: 28px;
       height: 28px;
       object-fit: contain;
       display: block;
     }
-
     .timeline-marker-col {
       width: 20px;
       position: relative;
@@ -155,14 +155,14 @@
 
     .boton {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 12px 25px;
       background-color: var(--verde-oscuro-texto);
       color: white;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; letter-spacing: 1px; }
@@ -185,12 +185,21 @@
         <div class="fecha-mes-hora der">2026</div>
       </div>
 
-      <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
-      <a class="boton" href="https://maps.app.goo.gl/qMRn4nFuyh6tFv4F7" target="_blank">Ver Ubicación</a>
+      <div class="bloque-ubicacion">
+        <h3>Ceremonia Religiosa</h3>
+        <p><strong>Parroquia Nuestra Señora de Fátima</strong><br>Río Cuarto, Córdoba</p>
+        <a class="boton" href="https://maps.app.goo.gl/H889FEBqEsp9HaTK8?g_st=ic" target="_blank">Ver Ubicación</a>
+      </div>
+
+      <div class="bloque-ubicacion">
+        <h3>Celebración</h3>
+        <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
+        <a class="boton" href="https://maps.app.goo.gl/qMRn4nFuyh6tFv4F7" target="_blank">Ver Ubicación</a>
+      </div>
     </section>
 
     <div class="foto-separador">
-      <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Florencia y Santiago">
+      <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Flor y Santi">
     </div>
 
     <section class="bloque-destacado">
@@ -204,7 +213,7 @@
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
           <div class="timeline-content-col">
             <div class="timeline-time">18:00 HS</div>
-            <div class="timeline-desc">Ceremonia Religiosa</div>
+            <div class="timeline-desc">Ceremonia en Parroquia Fátima</div>
           </div>
         </div>
 
