@@ -93,7 +93,7 @@
       display: block;
     }
 
-    /* === ESTILOS ITINERARIO ACTUALIZADOS PARA PNG === */
+    /* === ESTILOS ITINERARIO PNG === */
     .timeline-container {
       max-width: 320px;
       margin: 30px auto 0 auto;
@@ -102,24 +102,22 @@
     .timeline-item {
       display: flex;
       position: relative;
-      padding-bottom: 40px;
+      padding-bottom: 35px;
     }
     .timeline-item:last-child { padding-bottom: 0; }
     
-    /* Ajuste de columna de icono para imágenes */
     .timeline-icon-col {
       width: 60px;
       display: flex;
       justify-content: center;
-      align-items: flex-start; /* Alineado arriba */
+      align-items: flex-start;
       padding-right: 10px;
-      padding-top: 5px; /* Pequeño ajuste vertical */
+      padding-top: 5px;
     }
     
-    /* Nuevo estilo para las imágenes PNG */
     .png-icon {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
       display: block;
     }
@@ -134,7 +132,7 @@
       content: '';
       position: absolute;
       top: 15px;
-      bottom: -40px;
+      bottom: -35px;
       width: 1.5px;
       background-color: var(--verde-oscuro-texto);
       opacity: 0.3;
@@ -149,8 +147,8 @@
       margin-top: 12px;
     }
     .timeline-content-col { flex: 1; padding-left: 15px; }
-    .timeline-time { font-weight: 700; font-size: 1.1rem; }
-    .timeline-desc { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-top: 2px; }
+    .timeline-time { font-weight: 700; font-size: 1rem; }
+    .timeline-desc { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-top: 2px; }
 
     .bloque-destacado { background-color: #DCE3DA; }
     .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 10px; }
@@ -161,13 +159,13 @@
       background-color: var(--verde-oscuro-texto);
       color: white;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 20px;
     }
 
-    #contador { font-size: 1.3rem; font-weight: 600; margin-top: 15px; letter-spacing: 1px; }
+    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; letter-spacing: 1px; }
   </style>
 </head>
 <body>
@@ -201,7 +199,29 @@
         
         <div class="timeline-item">
           <div class="timeline-icon-col">
-            <img src="https://i.imgur.com/0g2G2J6.png" alt="Brindis" class="png-icon">
+            <img src="https://i.imgur.com/L13U0W7.png" alt="Iglesia" class="png-icon">
+          </div>
+          <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
+          <div class="timeline-content-col">
+            <div class="timeline-time">18:00 HS</div>
+            <div class="timeline-desc">Ceremonia Religiosa</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon-col">
+            <img src="https://i.imgur.com/m6T4U1U.png" alt="Civil" class="png-icon">
+          </div>
+          <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
+          <div class="timeline-content-col">
+            <div class="timeline-time">19:30 HS</div>
+            <div class="timeline-desc">Casamiento por Civil</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon-col">
+            <img src="https://i.imgur.com/0g2G2J6.png" alt="Recepción" class="png-icon">
           </div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
           <div class="timeline-content-col">
@@ -260,15 +280,13 @@
 
   <script>
     function updateCountdown() {
-        const target = new Date('January 30, 2026 21:00:00').getTime();
+        const target = new Date('January 30, 2026 18:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-
         if (diff <= 0) {
             document.getElementById('contador').innerHTML = "¡LLEGÓ EL DÍA!";
             return;
         }
-
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
