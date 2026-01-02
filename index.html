@@ -40,6 +40,7 @@
       margin-top: 30px;
       box-shadow: 0px 15px 35px rgba(65, 79, 62, 0.15);
       overflow: hidden;
+      position: relative;
     }
 
     section { padding: 40px 30px; text-align: center; }
@@ -50,11 +51,12 @@
       font-family: 'Pinyon Script', cursive; 
       font-size: 4rem; 
       line-height: 1.2;
+      color: var(--verde-oscuro-texto);
       margin: 20px 0;
       font-weight: 400;
     }
 
-    /* REDISEÑO DE BLOQUE DE FECHA CON AÑO */
+    /* BLOQUE DE FECHA REDISEÑADO (SIMÉTRICO) */
     .fecha-bloque {
       border-top: 1px solid var(--verde-oscuro-texto);
       border-bottom: 1px solid var(--verde-oscuro-texto);
@@ -73,16 +75,8 @@
       letter-spacing: 2px;
     }
 
-    /* Ajuste de espaciado lateral para evitar que se pegue a las barras */
-    .fecha-mes-hora.izq { 
-      text-align: right; 
-      padding-right: 20px; 
-    }
-
-    .fecha-mes-hora.der { 
-      text-align: left; 
-      padding-left: 20px; 
-    }
+    .fecha-mes-hora.izq { text-align: right; padding-right: 20px; }
+    .fecha-mes-hora.der { text-align: left; padding-left: 20px; }
 
     .fecha-dia {
       font-size: 3rem;
@@ -102,8 +96,61 @@
       display: block;
     }
 
+    /* ESTILOS ITINERARIO VISUAL */
+    .timeline-container {
+      max-width: 320px;
+      margin: 30px auto 0 auto;
+      text-align: left;
+    }
+    .timeline-item {
+      display: flex;
+      position: relative;
+      padding-bottom: 35px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-icon-col {
+      width: 50px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 15px;
+    }
+    .svg-icon {
+      width: 28px;
+      height: 28px;
+      stroke: var(--verde-oscuro-texto);
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .timeline-marker-col {
+      width: 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .timeline-marker-col::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      bottom: -35px;
+      width: 2px;
+      background-color: var(--verde-oscuro-texto);
+      opacity: 0.4;
+    }
+    .timeline-item:last-child .timeline-marker-col::before { display: none; }
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--verde-oscuro-texto);
+      border-radius: 50%;
+      z-index: 2;
+      margin-top: 10px;
+    }
+    .timeline-content-col { flex: 1; padding-left: 15px; }
+    .timeline-time { font-weight: 700; font-size: 1rem; }
+    .timeline-desc { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+
     .bloque-destacado { background-color: #DCE3DA; }
-    .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 20px; }
+    .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 10px; }
 
     .boton {
       display: inline-block;
@@ -117,7 +164,9 @@
       margin-top: 20px;
     }
 
-    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; }
+    #contador { font-size: 1.2rem; font-weight: 600; margin-top: 15px; letter-spacing: 1px; }
+
+    footer { padding: 30px; text-align: center; font-size: 0.8rem; opacity: 0.6; }
   </style>
 </head>
 <body>
@@ -143,15 +192,46 @@
     </section>
 
     <div class="foto-separador">
-      <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Florencia y Santiago">
+      <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Flor y Santi">
     </div>
 
     <section class="bloque-destacado">
       <h2>Itinerario</h2>
-      <div style="text-align: left; display: inline-block; border-left: 2px solid var(--verde-claro-borde); padding-left: 20px;">
-        <p><strong>21:00 HS</strong> - Recepción</p>
-        <p><strong>22:30 HS</strong> - Cena y Brindis</p>
-        <p><strong>00:00 HS</strong> - Fiesta</p>
+      <div class="timeline-container">
+        
+        <div class="timeline-item">
+          <div class="timeline-icon-col">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24"><path d="M8 21h8m-4-4v4M3 8h18m-9 4a5 5 0 0 0 5-5H7a5 5 0 0 0 5 5zm0 0V8"/></svg>
+          </div>
+          <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
+          <div class="timeline-content-col">
+            <div class="timeline-time">21:00 HS</div>
+            <div class="timeline-desc">Recepción</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon-col">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24"><path d="M11 4.5H9a2.5 2.5 0 0 0-2.5 2.5v5.5h-1V21h3v-2h-1v-6.5h4.5M17 21V3h-1v18h-3v-2h1V8.5H13"/></svg>
+          </div>
+          <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
+          <div class="timeline-content-col">
+            <div class="timeline-time">22:30 HS</div>
+            <div class="timeline-desc">Cena y Brindis</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon-col">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2v20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg>
+          </div>
+          <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
+          <div class="timeline-content-col">
+            <div class="timeline-time">00:00 HS</div>
+            <div class="timeline-desc">¡Comienza la Fiesta!</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -163,7 +243,7 @@
 
     <section class="bloque-destacado">
       <h2>Regalo</h2>
-      <p>Tu presencia es nuestro mejor regalo.</p>
+      <p>Tu presencia es nuestro mejor regalo. Si deseás realizarnos un presente:</p>
       <div style="border: 1px solid var(--verde-oscuro-texto); padding: 15px; display: inline-block;">
         <p>Alias: <strong>TU.ALIAS.AQUI</strong></p>
         <p>CBU: <strong>00000031000XXXXXXXXXX</strong></p>
@@ -175,6 +255,7 @@
       <div id="contador"></div>
     </section>
 
+    <footer>F & S · 2026</footer>
   </div>
 
   <script>
@@ -192,6 +273,3 @@
   </script>
 </body>
 </html>
-
-
-
