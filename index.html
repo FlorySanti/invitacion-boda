@@ -20,7 +20,7 @@
       --verde-salvia-fondo: #E3E9E1; 
       --verde-claro-borde: #A3B18A;
       --fondo-externo: #F2F5F1;
-      --verde-player-bg: #cfd8d0; /* Un tono ligeramente más oscuro para el player */
+      --verde-player-bg: #cfd8d0;
     }
 
     body {
@@ -76,23 +76,24 @@
     .bloque-ubicacion { margin-bottom: 40px; }
     .bloque-ubicacion h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
 
+    /* Nota: Mantenemos el estilo .foto-separador aunque no se use, por si acaso */
     .foto-separador img { width: 100%; height: 400px; object-fit: cover; display: block; }
 
     /* === ESTILOS DEL REPRODUCTOR DE MÚSICA === */
     .music-section {
-        padding: 20px 30px 40px 30px; /* Un poco menos de padding arriba */
+        padding: 20px 30px 40px 30px;
     }
     .music-card {
         background-color: var(--verde-player-bg);
         padding: 25px;
-        border-radius: 20px; /* Bordes redondeados estilo moderno */
+        border-radius: 20px;
         box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1);
         max-width: 320px;
         margin: 0 auto;
     }
     .music-cover-art {
         width: 100%;
-        aspect-ratio: 1 / 1; /* Asegura que sea cuadrado */
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -100,7 +101,7 @@
     }
     .music-info h3 {
         font-family: 'Pinyon Script', cursive;
-        font-size: 2rem;
+        font-size: 2.5rem; /* Un poco más grande para LOVE */
         margin: 0;
         line-height: 1;
     }
@@ -111,19 +112,13 @@
         margin: 5px 0 20px 0;
         opacity: 0.8;
     }
-    /* Estilizando el reproductor nativo de HTML5 */
     audio {
         width: 100%;
         height: 40px;
         outline: none;
     }
-    /* Intento de colorear los controles en Chrome/Safari para que combinen */
-    audio::-webkit-media-controls-panel {
-        background-color: var(--verde-salvia-fondo);
-    }
-    audio::-webkit-media-controls-enclosure {
-        border-radius: 10px;
-    }
+    audio::-webkit-media-controls-panel { background-color: var(--verde-salvia-fondo); }
+    audio::-webkit-media-controls-enclosure { border-radius: 10px; }
 
     /* Estilos Itinerario PNG */
     .timeline-container { max-width: 320px; margin: 30px auto 0 auto; text-align: left; }
@@ -177,17 +172,13 @@
       </div>
     </section>
 
-    <div class="foto-separador">
-      <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Flor y Santi">
-    </div>
-
     <section class="music-section">
         <div class="music-card">
             <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Portada Musica" class="music-cover-art">
             
             <div class="music-info">
-                <h3>L-O-V-E</h3>
-                <p>Nat King Cole</p>
+                <h3>LOVE</h3>
+                <p>Reproduce nuestra canción!</p>
             </div>
 
             <audio controls controlsList="nodownload">
@@ -262,9 +253,6 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
-  </script>
-</body>
-</html>
   </script>
 </body>
 </html>
