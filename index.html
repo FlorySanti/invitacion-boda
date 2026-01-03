@@ -20,6 +20,7 @@
       --verde-salvia-fondo: #E3E9E1; 
       --verde-claro-borde: #A3B18A;
       --fondo-externo: #F2F5F1;
+      --verde-player-bg: #cfd8d0; /* Un tono ligeramente más oscuro para el player */
     }
 
     body {
@@ -77,12 +78,59 @@
 
     .foto-separador img { width: 100%; height: 400px; object-fit: cover; display: block; }
 
+    /* === ESTILOS DEL REPRODUCTOR DE MÚSICA === */
+    .music-section {
+        padding: 20px 30px 40px 30px; /* Un poco menos de padding arriba */
+    }
+    .music-card {
+        background-color: var(--verde-player-bg);
+        padding: 25px;
+        border-radius: 20px; /* Bordes redondeados estilo moderno */
+        box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1);
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .music-cover-art {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Asegura que sea cuadrado */
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .music-info h3 {
+        font-family: 'Pinyon Script', cursive;
+        font-size: 2rem;
+        margin: 0;
+        line-height: 1;
+    }
+    .music-info p {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 5px 0 20px 0;
+        opacity: 0.8;
+    }
+    /* Estilizando el reproductor nativo de HTML5 */
+    audio {
+        width: 100%;
+        height: 40px;
+        outline: none;
+    }
+    /* Intento de colorear los controles en Chrome/Safari para que combinen */
+    audio::-webkit-media-controls-panel {
+        background-color: var(--verde-salvia-fondo);
+    }
+    audio::-webkit-media-controls-enclosure {
+        border-radius: 10px;
+    }
+
+    /* Estilos Itinerario PNG */
     .timeline-container { max-width: 320px; margin: 30px auto 0 auto; text-align: left; }
     .timeline-item { display: flex; position: relative; padding-bottom: 35px; }
     .timeline-item:last-child { padding-bottom: 0; }
     .timeline-icon-col { width: 60px; display: flex; justify-content: center; align-items: flex-start; padding-right: 10px; padding-top: 5px; }
     .png-icon { width: 28px; height: 28px; object-fit: contain; display: block; }
-
     .timeline-marker-col { width: 20px; position: relative; display: flex; justify-content: center; }
     .timeline-marker-col::before { content: ''; position: absolute; top: 15px; bottom: -35px; width: 1.5px; background-color: var(--verde-oscuro-texto); opacity: 0.3; }
     .timeline-item:last-child .timeline-marker-col::before { display: none; }
@@ -133,65 +181,49 @@
       <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Flor y Santi">
     </div>
 
+    <section class="music-section">
+        <div class="music-card">
+            <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Portada Musica" class="music-cover-art">
+            
+            <div class="music-info">
+                <h3>L-O-V-E</h3>
+                <p>Nat King Cole</p>
+            </div>
+
+            <audio controls controlsList="nodownload">
+                <source src="cancion.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+    </section>
     <section class="bloque-destacado">
       <h2>Itinerario</h2>
       <div class="timeline-container">
-        
         <div class="timeline-item">
-          <div class="timeline-icon-col">
-            <img src="Iglesia.png" alt="Iglesia" class="png-icon">
-          </div>
+          <div class="timeline-icon-col"><img src="Iglesia.png" alt="Iglesia" class="png-icon"></div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
-          <div class="timeline-content-col">
-            <div class="timeline-time">18:00 HS</div>
-            <div class="timeline-desc">Ceremonia en Parroquia Fátima</div>
-          </div>
+          <div class="timeline-content-col"><div class="timeline-time">18:00 HS</div><div class="timeline-desc">Ceremonia en Parroquia Fátima</div></div>
         </div>
-
         <div class="timeline-item">
-          <div class="timeline-icon-col">
-            <img src="civil.png" alt="Civil" class="png-icon">
-          </div>
+          <div class="timeline-icon-col"><img src="civil.png" alt="Civil" class="png-icon"></div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
-          <div class="timeline-content-col">
-            <div class="timeline-time">19:30 HS</div>
-            <div class="timeline-desc">Casamiento por Civil</div>
-          </div>
+          <div class="timeline-content-col"><div class="timeline-time">19:30 HS</div><div class="timeline-desc">Casamiento por Civil</div></div>
         </div>
-
         <div class="timeline-item">
-          <div class="timeline-icon-col">
-            <img src="recepcion.png" alt="Recepción" class="png-icon">
-          </div>
+          <div class="timeline-icon-col"><img src="recepcion.png" alt="Recepción" class="png-icon"></div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
-          <div class="timeline-content-col">
-            <div class="timeline-time">21:00 HS</div>
-            <div class="timeline-desc">Recepción</div>
-          </div>
+          <div class="timeline-content-col"><div class="timeline-time">21:00 HS</div><div class="timeline-desc">Recepción</div></div>
         </div>
-
         <div class="timeline-item">
-          <div class="timeline-icon-col">
-             <img src="cena.png" alt="Cena" class="png-icon">
-          </div>
+          <div class="timeline-icon-col"><img src="cena.png" alt="Cena" class="png-icon"></div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
-          <div class="timeline-content-col">
-            <div class="timeline-time">22:30 HS</div>
-            <div class="timeline-desc">Cena y Brindis</div>
-          </div>
+          <div class="timeline-content-col"><div class="timeline-time">22:30 HS</div><div class="timeline-desc">Cena y Brindis</div></div>
         </div>
-
         <div class="timeline-item">
-          <div class="timeline-icon-col">
-             <img src="fiesta.png" alt="Fiesta" class="png-icon">
-          </div>
+          <div class="timeline-icon-col"><img src="fiesta.png" alt="Fiesta" class="png-icon"></div>
           <div class="timeline-marker-col"><div class="timeline-dot"></div></div>
-          <div class="timeline-content-col">
-            <div class="timeline-time">00:00 HS</div>
-            <div class="timeline-desc">¡Comienza la Fiesta!</div>
-          </div>
+          <div class="timeline-content-col"><div class="timeline-time">00:00 HS</div><div class="timeline-desc">¡Comienza la Fiesta!</div></div>
         </div>
-
       </div>
     </section>
 
@@ -230,6 +262,9 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
