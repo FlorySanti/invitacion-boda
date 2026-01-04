@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta property="og:title" content="Invitación: Florencia & Santiago">
-  <meta property="og:description" content="¡Nos casamos! Confirmá tu asistencia para el 30/01/2026.">
+  <meta property="og:description" content="¡Nos casamos! Confirmá tu asistencia aquí para el 30/01/2026.">
   <meta property="og:image" content="https://i.imgur.com/ATIVHmj.jpeg">
-  <meta property="og:url" content="https://santihern15.github.io/invitacion-boda/">
+  <meta property="og:url" content="https://FlorySanti.github.io/invitacion-boda/">
   <meta property="og:type" content="website">
 
   <title>Florencia & Santiago</title>
@@ -47,29 +47,16 @@
 
     .header { padding-top: 100px; background: linear-gradient(to bottom, var(--verde-salvia-fondo), #EEF2EC); }
     
-    h1 { 
-      font-family: 'Pinyon Script', cursive; 
-      font-size: 4rem; 
-      line-height: 1.2;
-      margin: 20px 0;
-      font-weight: 400;
-    }
+    h1 { font-family: 'Pinyon Script', cursive; font-size: 4rem; line-height: 1.2; margin: 20px 0; font-weight: 400; }
 
     .fecha-bloque {
-      border-top: 1px solid var(--verde-oscuro-texto);
-      border-bottom: 1px solid var(--verde-oscuro-texto);
-      padding: 15px 0;
-      margin: 30px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 350px;
+      border-top: 1px solid var(--verde-oscuro-texto); border-bottom: 1px solid var(--verde-oscuro-texto);
+      padding: 15px 0; margin: 30px auto; display: flex; justify-content: center; align-items: center; max-width: 350px;
     }
 
     .fecha-mes-hora { flex: 1; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
     .fecha-mes-hora.izq { text-align: right; padding-right: 20px; }
     .fecha-mes-hora.der { text-align: left; padding-left: 20px; }
-
     .fecha-dia { font-size: 2.8rem; font-weight: 400; line-height: 1; padding: 0 15px; min-width: 60px; text-align: center; }
     .barra-vertical { border-left: 1px solid var(--verde-oscuro-texto); height: 40px; }
 
@@ -79,12 +66,29 @@
     /* Música */
     .music-section { padding: 20px 30px 40px 30px; }
     .music-card { background-color: var(--verde-player-bg); padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1); max-width: 320px; margin: 0 auto; }
-    .music-cover-art { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .music-cover-art { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
     .music-info h3 { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; margin: 0; line-height: 1; }
     .music-info p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 5px 0 20px 0; opacity: 0.8; }
     audio { width: 100%; height: 40px; outline: none; }
 
-    /* Itinerario */
+    /* Countdown + Calendario (Fondo Oscuro) */
+    .section-countdown-calendar { background-color: var(--verde-oscuro-texto); color: white; padding: 60px 20px; }
+    .countdown-title { text-transform: uppercase; letter-spacing: 4px; font-size: 1.2rem; margin-bottom: 30px; }
+    .countdown-wrapper { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
+    .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
+    .countdown-number { font-size: 2.2rem; font-weight: 400; line-height: 1; }
+    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-top: 5px; }
+    .countdown-divider { font-size: 2rem; opacity: 0.5; padding-top: 2px; }
+    .gran-dia-title { text-transform: uppercase; letter-spacing: 3px; font-size: 1.1rem; margin-bottom: 5px; }
+    .mes-año { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); max-width: 300px; margin: 0 auto; text-align: center; font-size: 0.85rem; }
+    .calendar-header { font-weight: bold; opacity: 0.6; padding-bottom: 15px; text-transform: uppercase; font-size: 0.7rem; }
+    .calendar-day { height: 45px; display: flex; justify-content: center; align-items: center; }
+    .highlight-day { border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; }
+
+    /* Itinerario (Fondo Claro) */
+    .bloque-destacado { background-color: #DCE3DA; }
+    .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 10px; }
     .timeline-container { max-width: 320px; margin: 30px auto 0 auto; text-align: left; }
     .timeline-item { display: flex; position: relative; padding-bottom: 35px; }
     .timeline-item:last-child { padding-bottom: 0; }
@@ -98,62 +102,12 @@
     .timeline-time { font-weight: 700; font-size: 1rem; }
     .timeline-desc { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-top: 2px; }
 
-    .bloque-destacado { background-color: #DCE3DA; }
-    .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 10px; }
-
     .boton { display: inline-block; padding: 12px 25px; background-color: var(--verde-oscuro-texto); color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
 
-    /* === SECCIÓN FALTAN + CALENDARIO (CORREGIDA) === */
-    .section-countdown-calendar {
-      background-color: var(--verde-oscuro-texto);
-      color: white;
-      padding: 60px 20px;
-    }
-    .countdown-title { text-transform: uppercase; letter-spacing: 4px; font-size: 1.2rem; margin-bottom: 30px; }
-    
-    .countdown-wrapper { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
-    .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
-    .countdown-number { font-size: 2.2rem; font-weight: 400; line-height: 1; }
-    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-top: 5px; }
-    .countdown-divider { font-size: 2rem; opacity: 0.5; padding-top: 2px; }
-
-    .gran-dia-title { text-transform: uppercase; letter-spacing: 3px; font-size: 1.1rem; margin-bottom: 5px; }
-    .mes-año { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px; }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      max-width: 300px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-    .calendar-header { font-weight: bold; opacity: 0.6; padding-bottom: 15px; text-transform: uppercase; font-size: 0.7rem; }
-    
-    /* CORRECCIÓN DE ALINEACIÓN EN EL CALENDARIO */
-    .calendar-day {
-      height: 45px; /* Altura fija para todas las celdas */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    /* Estilo para el círculo del día */
-    .highlight-day {
-        border: 1px solid rgba(255,255,255,0.5);
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2px; /* Un pequeño ajuste óptico */
-    }
-
-    /* Foto Final */
-    .final-photo-section { padding: 40px 30px; }
-    .final-photo-card { background-color: var(--verde-player-bg); padding: 20px; border-radius: 20px; box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1); max-width: 320px; margin: 0 auto; }
-    .final-photo-card img { width: 100%; height: auto; border-radius: 12px; display: block; }
+    /* Tarjetas de Fotos */
+    .photo-card-section { padding: 20px 30px 40px 30px; }
+    .photo-card-inner { background-color: var(--verde-player-bg); padding: 20px; border-radius: 20px; box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1); max-width: 320px; margin: 0 auto; }
+    .photo-card-inner img { width: 100%; height: auto; border-radius: 12px; display: block; }
     
     footer { padding: 20px; font-size: 0.8rem; opacity: 0.6; text-align: center; }
   </style>
@@ -165,7 +119,6 @@
     <section class="header">
       <p style="font-style: italic;">Te invitamos a nuestro casamiento</p>
       <h1>Florencia<br>&<br>Santiago</h1>
-      
       <div style="text-transform: uppercase; letter-spacing: 3px; margin-top: 30px;">Viernes</div>
       <div class="fecha-bloque">
         <div class="fecha-mes-hora izq">Enero</div>
@@ -174,13 +127,11 @@
         <div class="barra-vertical"></div>
         <div class="fecha-mes-hora der">2026</div>
       </div>
-
       <div class="bloque-ubicacion">
         <h3>Ceremonia Religiosa</h3>
         <p><strong>Parroquia Nuestra Señora de Fátima</strong><br>Río Cuarto, Córdoba</p>
         <a class="boton" href="https://maps.app.goo.gl/H889FEBqEsp9HaTK8?g_st=ic" target="_blank">Ver Ubicación</a>
       </div>
-
       <div class="bloque-ubicacion">
         <h3>Celebración</h3>
         <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
@@ -191,13 +142,47 @@
     <section class="music-section">
         <div class="music-card">
             <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Portada Musica" class="music-cover-art">
-            <div class="music-info">
-                <h3>LOVE</h3>
-                <p>Reproduce nuestra canción!</p>
-            </div>
-            <audio controls controlsList="nodownload">
-                <source src="cancion.mp3" type="audio/mpeg">
-            </audio>
+            <div class="music-info"><h3>LOVE</h3><p>Reproduce nuestra canción!</p></div>
+            <audio controls controlsList="nodownload"><source src="cancion.mp3" type="audio/mpeg"></audio>
+        </div>
+    </section>
+
+    <section class="section-countdown-calendar">
+        <div class="countdown-title">Faltan</div>
+        <div class="countdown-wrapper">
+            <div class="countdown-item"><div class="countdown-number" id="val-d">00</div><div class="countdown-label">Días</div></div>
+            <div class="countdown-divider">:</div>
+            <div class="countdown-item"><div class="countdown-number" id="val-h">00</div><div class="countdown-label">Horas</div></div>
+            <div class="countdown-divider">:</div>
+            <div class="countdown-item"><div class="countdown-number" id="val-m">00</div><div class="countdown-label">Min</div></div>
+            <div class="countdown-divider">:</div>
+            <div class="countdown-item"><div class="countdown-number" id="val-s">00</div><div class="countdown-label">Seg</div></div>
+        </div>
+        <div class="gran-dia-title">El Gran Día</div>
+        <div class="mes-año">Enero 2026</div>
+        <div class="calendar-grid">
+            <div class="calendar-header">Lun</div><div class="calendar-header">Mar</div><div class="calendar-header">Mie</div><div class="calendar-header">Jue</div><div class="calendar-header">Vie</div><div class="calendar-header">Sab</div><div class="calendar-header">Dom</div>
+            <div class="calendar-day"></div><div class="calendar-day"></div><div class="calendar-day"></div>
+            <div class="calendar-day">1</div><div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div>
+            <div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div><div class="calendar-day">8</div>
+            <div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div><div class="calendar-day">12</div>
+            <div class="calendar-day">13</div><div class="calendar-day">14</div><div class="calendar-day">15</div><div class="calendar-day">16</div>
+            <div class="calendar-day">17</div><div class="calendar-day">18</div><div class="calendar-day">19</div><div class="calendar-day">20</div>
+            <div class="calendar-day">21</div><div class="calendar-day">22</div><div class="calendar-day">23</div><div class="calendar-day">24</div>
+            <div class="calendar-day">25</div><div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
+            <div class="calendar-day">29</div><div class="calendar-day"><span class="highlight-day">30</span></div><div class="calendar-day">31</div>
+        </div>
+    </section>
+
+    <section>
+      <h2>Confirmación</h2>
+      <p style="font-style: italic; font-size: 0.9rem;">IMPORTANTE: Completar un formulario por invitado.</p>
+      <a class="boton" href="https://forms.gle/DyGJSEcH8xj3xS9L6" target="_blank">Confirmar Asistencia</a>
+    </section>
+
+    <section class="photo-card-section">
+        <div class="photo-card-inner">
+            <img src="https://i.imgur.com/6GN9lTa.jpeg" alt="Flor y Santi Foto 2">
         </div>
     </section>
 
@@ -232,68 +217,8 @@
       </div>
     </section>
 
-    <section>
-      <h2>Confirmación</h2>
-      <p style="font-style: italic; font-size: 0.9rem;">IMPORTANTE: Completar un formulario por invitado.</p>
-      <a class="boton" href="https://forms.gle/DyGJSEcH8xj3xS9L6" target="_blank">Confirmar Asistencia</a>
-    </section>
-
-    <section class="section-countdown-calendar">
-        <div class="countdown-title">Faltan</div>
-        
-        <div class="countdown-wrapper">
-            <div class="countdown-item">
-                <div class="countdown-number" id="val-d">00</div>
-                <div class="countdown-label">Días</div>
-            </div>
-            <div class="countdown-divider">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="val-h">00</div>
-                <div class="countdown-label">Horas</div>
-            </div>
-            <div class="countdown-divider">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="val-m">00</div>
-                <div class="countdown-label">Min</div>
-            </div>
-            <div class="countdown-divider">:</div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="val-s">00</div>
-                <div class="countdown-label">Seg</div>
-            </div>
-        </div>
-
-        <div class="gran-dia-title">El Gran Día</div>
-        <div class="mes-año">Enero 2026</div>
-
-        <div class="calendar-grid">
-            <div class="calendar-header">Lun</div>
-            <div class="calendar-header">Mar</div>
-            <div class="calendar-header">Mie</div>
-            <div class="calendar-header">Jue</div>
-            <div class="calendar-header">Vie</div>
-            <div class="calendar-header">Sab</div>
-            <div class="calendar-header">Dom</div>
-            
-            <div class="calendar-day"></div><div class="calendar-day"></div><div class="calendar-day"></div>
-            
-            <div class="calendar-day">1</div><div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div>
-            <div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div><div class="calendar-day">8</div>
-            <div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div><div class="calendar-day">12</div>
-            <div class="calendar-day">13</div><div class="calendar-day">14</div><div class="calendar-day">15</div><div class="calendar-day">16</div>
-            <div class="calendar-day">17</div><div class="calendar-day">18</div><div class="calendar-day">19</div><div class="calendar-day">20</div>
-            <div class="calendar-day">21</div><div class="calendar-day">22</div><div class="calendar-day">23</div><div class="calendar-day">24</div>
-            <div class="calendar-day">25</div><div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
-            <div class="calendar-day">29</div>
-            
-            <div class="calendar-day"><span class="highlight-day">30</span></div>
-            
-            <div class="calendar-day">31</div>
-        </div>
-    </section>
-
-    <section class="final-photo-section">
-        <div class="final-photo-card">
+    <section class="photo-card-section">
+        <div class="photo-card-inner">
             <img src="https://i.imgur.com/vMO39XY.jpeg" alt="Flor y Santi Final">
         </div>
     </section>
@@ -306,17 +231,11 @@
         const target = new Date('January 30, 2026 18:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-
-        if (diff <= 0) {
-            document.getElementById('val-d').innerHTML = "00";
-            return;
-        }
-
+        if (diff <= 0) { document.getElementById('val-d').innerHTML = "00"; return; }
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
-
         document.getElementById('val-d').innerHTML = d.toString().padStart(2, '0');
         document.getElementById('val-h').innerHTML = h.toString().padStart(2, '0');
         document.getElementById('val-m').innerHTML = m.toString().padStart(2, '0');
