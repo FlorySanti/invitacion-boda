@@ -44,9 +44,7 @@
     }
 
     section { padding: 40px 30px; text-align: center; }
-
     .header { padding-top: 100px; background: linear-gradient(to bottom, var(--verde-salvia-fondo), #EEF2EC); }
-    
     h1 { font-family: 'Pinyon Script', cursive; font-size: 4rem; line-height: 1.2; margin: 20px 0; font-weight: 400; }
 
     .fecha-bloque {
@@ -60,10 +58,9 @@
     .fecha-dia { font-size: 2.8rem; font-weight: 400; line-height: 1; padding: 0 15px; min-width: 60px; text-align: center; }
     .barra-vertical { border-left: 1px solid var(--verde-oscuro-texto); height: 40px; }
 
-    .bloque-ubicacion { margin-bottom: 40px; }
-    .bloque-ubicacion h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px; }
+    .bloque-ubicacion { margin-bottom: 35px; }
+    .bloque-ubicacion h3 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 5px; }
 
-    /* Música */
     .music-section { padding: 20px 30px 40px 30px; }
     .music-card { background-color: var(--verde-player-bg); padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1); max-width: 320px; margin: 0 auto; }
     .music-cover-art { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
@@ -71,7 +68,6 @@
     .music-info p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 5px 0 20px 0; opacity: 0.8; }
     audio { width: 100%; height: 40px; outline: none; }
 
-    /* Countdown + Calendario */
     .section-countdown-calendar { background-color: var(--verde-oscuro-texto); color: white; padding: 60px 20px; }
     .countdown-title { text-transform: uppercase; letter-spacing: 4px; font-size: 1.2rem; margin-bottom: 30px; }
     .countdown-wrapper { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
@@ -79,24 +75,20 @@
     .countdown-number { font-size: 2.2rem; font-weight: 400; line-height: 1; }
     .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-top: 5px; }
     .countdown-divider { font-size: 2rem; opacity: 0.5; padding-top: 2px; }
-    .gran-dia-title { text-transform: uppercase; letter-spacing: 3px; font-size: 1.1rem; margin-bottom: 5px; }
-    .mes-año { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px; }
+
     .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); max-width: 300px; margin: 0 auto; text-align: center; font-size: 0.85rem; }
     .calendar-header { font-weight: bold; opacity: 0.6; padding-bottom: 15px; text-transform: uppercase; font-size: 0.7rem; }
     .calendar-day { height: 45px; display: flex; justify-content: center; align-items: center; }
     .highlight-day { border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; }
 
-    /* Tarjetas de Fotos */
     .photo-card-section { padding: 20px 30px 40px 30px; }
     .photo-card-inner { background-color: var(--verde-player-bg); padding: 20px; border-radius: 20px; box-shadow: 0 10px 20px rgba(65, 79, 62, 0.1); max-width: 320px; margin: 0 auto; }
     .photo-card-inner img { width: 100%; height: auto; border-radius: 12px; display: block; }
 
-    /* Itinerario */
     .bloque-destacado { background-color: #DCE3DA; }
     .bloque-destacado h2 { font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 10px; }
     .timeline-container { max-width: 320px; margin: 30px auto 0 auto; text-align: left; }
     .timeline-item { display: flex; position: relative; padding-bottom: 35px; }
-    .timeline-item:last-child { padding-bottom: 0; }
     .timeline-icon-col { width: 60px; display: flex; justify-content: center; align-items: flex-start; padding-right: 10px; padding-top: 5px; }
     .png-icon { width: 28px; height: 28px; object-fit: contain; display: block; }
     .timeline-marker-col { width: 20px; position: relative; display: flex; justify-content: center; }
@@ -107,14 +99,13 @@
     .timeline-time { font-weight: 700; font-size: 1rem; }
     .timeline-desc { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-top: 2px; }
 
-    .boton { display: inline-block; padding: 12px 25px; background-color: var(--verde-oscuro-texto); color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
-    
-    /* ESTILOS IMPORTE (Reintegrados) */
     .seccion-importe { padding: 20px 30px 40px 30px; text-align: center; }
     .cuadro-importe { border: 1px solid var(--verde-oscuro-texto); padding: 20px; display: inline-block; max-width: 320px; border-radius: 10px; }
-    .cuadro-importe h3 { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px; }
     .monto-valor { font-size: 1.8rem; font-weight: 600; color: var(--verde-oscuro-texto); }
 
+    .boton { display: inline-block; padding: 12px 25px; background-color: var(--verde-oscuro-texto); color: white; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+    .agradecimiento-section { padding: 40px 30px; text-align: center; }
+    .texto-gracias { font-family: 'Pinyon Script', cursive; font-size: 3rem; margin: 0; line-height: 1.2; }
     footer { padding: 20px; font-size: 0.8rem; opacity: 0.6; text-align: center; }
   </style>
 </head>
@@ -133,11 +124,19 @@
         <div class="barra-vertical"></div>
         <div class="fecha-mes-hora der">2026</div>
       </div>
+
       <div class="bloque-ubicacion">
         <h3>Ceremonia Religiosa</h3>
         <p><strong>Parroquia Nuestra Señora de Fátima</strong><br>Río Cuarto, Córdoba</p>
         <a class="boton" href="https://maps.app.goo.gl/H889FEBqEsp9HaTK8?g_st=ic" target="_blank">Ver Ubicación</a>
       </div>
+
+      <div class="bloque-ubicacion">
+        <h3>Casamiento por Civil</h3>
+        <p><strong>Registro Civil de Rio Cuarto Centro</strong><br>Río Cuarto, Córdoba</p>
+        <a class="boton" href="https://maps.app.goo.gl/jJM8anyy6mgkH95q8" target="_blank">Ver Ubicación</a>
+      </div>
+
       <div class="bloque-ubicacion">
         <h3>Celebración</h3>
         <p><strong>Colegio Médico</strong><br>Río Cuarto, Córdoba</p>
@@ -147,7 +146,7 @@
 
     <section class="music-section">
         <div class="music-card">
-            <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Portada Musica" class="music-cover-art">
+            <img src="https://i.imgur.com/ATIVHmj.jpeg" alt="Portada" class="music-cover-art">
             <div class="music-info"><h3>LOVE</h3><p>Reproduce nuestra canción!</p></div>
             <audio controls controlsList="nodownload"><source src="cancion.mp3" type="audio/mpeg"></audio>
         </div>
@@ -164,8 +163,8 @@
             <div class="countdown-divider">:</div>
             <div class="countdown-item"><div class="countdown-number" id="val-s">00</div><div class="countdown-label">Seg</div></div>
         </div>
-        <div class="gran-dia-title">El Gran Día</div>
-        <div class="mes-año">Enero 2026</div>
+        <div style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.1rem; margin-bottom: 5px;">El Gran Día</div>
+        <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px;">Enero 2026</div>
         <div class="calendar-grid">
             <div class="calendar-header">Lun</div><div class="calendar-header">Mar</div><div class="calendar-header">Mie</div><div class="calendar-header">Jue</div><div class="calendar-header">Vie</div><div class="calendar-header">Sab</div><div class="calendar-header">Dom</div>
             <div class="calendar-day"></div><div class="calendar-day"></div><div class="calendar-day"></div>
@@ -181,9 +180,7 @@
     </section>
 
     <section class="photo-card-section">
-        <div class="photo-card-inner">
-            <img src="https://i.imgur.com/6GN9lTa.jpeg" alt="Flor y Santi Foto 2">
-        </div>
+        <div class="photo-card-inner"><img src="https://i.imgur.com/6GN9lTa.jpeg" alt="Flor y Santi"></div>
     </section>
 
     <section class="bloque-destacado">
@@ -220,18 +217,16 @@
     <section>
         <h2 style="font-family: 'Pinyon Script', cursive; font-size: 2.8rem; margin-bottom: 5px;">Código de vestimenta</h2>
         <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px;">Elegante</p>
-        <img src="Dresscode.png" alt="Código de vestimenta" style="width: 120px; height: auto; margin: 0 auto; display: block;">
+        <img src="Dresscode.png" alt="Dress Code" style="width: 120px; height: auto; margin: 0 auto; display: block;">
     </section>
 
     <section class="photo-card-section">
-        <div class="photo-card-inner">
-            <img src="https://i.imgur.com/PGnX7sx.jpeg" alt="Flor y Santi Foto 3">
-        </div>
+        <div class="photo-card-inner"><img src="https://i.imgur.com/PGnX7sx.jpeg" alt="Foto 3"></div>
     </section>
 
     <section class="seccion-importe">
         <div class="cuadro-importe">
-            <h3>Valor de la tarjeta</h3>
+            <h3 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px;">Valor de la tarjeta</h3>
             <div class="monto-valor">$120.000</div>
             <p style="font-size: 0.8rem; margin-top: 5px;">Por persona</p>
         </div>
@@ -243,10 +238,13 @@
       <a class="boton" href="https://forms.gle/DyGJSEcH8xj3xS9L6" target="_blank">Confirmar Asistencia</a>
     </section>
 
+    <section class="agradecimiento-section">
+        <p style="font-size: 1rem; margin-bottom: 15px;">Esperamos contar con tu presencia</p>
+        <p class="texto-gracias">Muchas Gracias!</p>
+    </section>
+
     <section class="photo-card-section">
-        <div class="photo-card-inner">
-            <img src="https://i.imgur.com/vMO39XY.jpeg" alt="Flor y Santi Final">
-        </div>
+        <div class="photo-card-inner"><img src="https://i.imgur.com/vMO39XY.jpeg" alt="Final"></div>
     </section>
 
     <footer>F & S · 2026</footer>
